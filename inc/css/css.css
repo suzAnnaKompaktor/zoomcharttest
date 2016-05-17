@@ -1,0 +1,124 @@
+.top {display:none}
+.standalone .top {display:block}
+#chart {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;	
+} 
+#action-btns {
+	margin-right:0 !important;
+}
+
+.arrow p, .arrow a {
+    background-color: #c00;
+    float:left;
+    display: block;
+    padding: 5px 10px 0px 10px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+    clear: both;
+	margin:0;
+}
+.arrow {
+	background-repeat:no-repeat;
+	font-family: 'Loved by the King', cursive;
+	color:#fff;	
+	z-index:999;
+	position:absolute;
+	font-size:30px;
+	opacity:0; 
+    -webkit-animation:fadeIn ease-in 1;  
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+	-webkit-animation-delay: 0.8s;
+	-moz-animation-delay: 0.8s;
+	animation-delay: 0.8s;
+	pointer-events: none;
+}
+.arrow.index-1, .arrow.index-2, .arrow.index-3, .arrow.index-4, .arrow.index-5, .arrow.index-6, .arrow.index-7, .arrow.index-8 {
+	padding-bottom:60px;
+	background-position:left bottom;
+	-ms-transform: rotate(-10deg); 
+	-webkit-transform: rotate(-10deg); 
+	transform: rotate(-10deg);
+	background-size:30px auto;
+	line-height: 40px;
+}
+.arrow.index-1.arrowLeft, .arrow.index-2.arrowLeft, .arrow.index-3.arrowLeft, .arrow.index-4.arrowLeft, .arrow.index-5.arrowLeft, .arrow.index-6.arrowLeft, .arrow.index-7.arrowLeft .arrow.index-8.arrowLeft {
+	text-align:right;
+	background-position:right bottom;
+	-ms-transform: rotate(5deg); 
+	-webkit-transform: rotate(5deg); 
+	transform: rotate(5deg);
+	white-space:nowrap;
+}
+.arrow.index-1.arrowLeft {
+	margin:-50px 0 0 -251px;
+	background-position:calc(100% - 58px) bottom;
+}
+.arrow.index-1 {
+	margin:-80px 0 0 -11px;
+}
+.arrow.index-2 {
+	margin:-135px 0 0 10px;
+}
+.arrow.index-2.arrowLeft {
+	margin:-105px 0 0 -333px;
+	background-position:calc(100% - 20px) bottom;
+}
+.arrow.index-3 {
+	margin:-125px 0 0 -10px;
+}
+.arrow.index-3.arrowLeft {
+	margin: -115px 0 0 -380px;
+	background-position: calc(100% - 50px) bottom;
+}
+.arrow.index-4, .arrow.index-5{
+	margin: 130px 0 0 280px;
+	background-image: url(../img/arrow2.png);
+	background-size: 60px auto;
+	background-position: left 15px;
+	padding: 0 0 0 60px;
+}
+.arrow.index-4.arrowLeft, .arrow.index-5.arrowLeft{
+	margin: 50px 0 0 -280px;
+	background-image: url(../img/arrow.png);
+	background-size: 30px auto;
+	background-position: calc(100% - 20px) bottom;
+	padding: 0 0 60px 20px;
+}
+.arrow.index-6, .arrow.index-7 {
+	margin: 0 0 0 0;
+	background-image: none;
+	padding: 0 0 0 0px;
+	bottom: 50px;
+	right: 10px;
+}
+.arrow.index-7 {
+	pointer-events:auto;
+	left:auto !important;
+	top:auto !important;	
+}
+
+
+
+.arrow.popular-licence{
+	left:264px;
+	top:-10px;
+	padding-bottom:40px;
+	background-position:left bottom;
+	-ms-transform: rotate(20deg); 
+	-webkit-transform: rotate(20deg); 
+	transform: rotate(20deg);
+	font-size:23px;
+	background-size:20px auto;
+}

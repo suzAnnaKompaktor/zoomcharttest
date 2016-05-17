@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="en" id="6d6475762e6c881b37d0aee0af051d2cac5b4699">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Business Builder</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<!--        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"> -->
+        <link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/general.css">
+        <link rel="stylesheet" type="text/css" href="/css/jquery.qtip.min.css">
+
+        <script src="/js/jquery-2.1.1.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/jquery.qtip.min.js"></script>
+        <script src="/js/eventmanager.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/bundles/bazingajstranslation/js/translator.min.js"></script>
+        <script src="http://dv.local:8083/app_dev.php/translations?lang=en"></script>
+        <script>
+            window.onbeforeunload = function (e) {
+                var pageCode = $('html').attr('id');
+                $.ajax({
+                    'url': '/app_dev.php/page-close',
+                    'data': { 'pageCode': pageCode }
+                });
+            }
+        </script>
+            </head>
+    <body class="dashboard">
+              <nav class="navbar" role="navigation">
+    <div class="container">
+        <div id="navbar-left">
+
+            <div id="logo" class="nl-item-1 nl-item">
+                <div class="option-active option" id="main-menu-select">
+                    <div class="title">
+                                                Business Builder
+                                          </div>
+                    <div class="icon"></div></div>
+                <div class="dropdown">
+
+
+
+            <ul class="nav navbar-nav">
+
+
+                                <li icon="home" class="option first">                            <a href="/app_dev.php/" >
+
+        <div class="title">Home</div>
+        <div class="icon menu-icon-home"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="irt" class="option">                            <a href="/app_dev.php/irt" >
+
+        <div class="title">Slice n&#039; Dice</div>
+        <div class="icon menu-icon-irt"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="quickstart" class="option">                            <a href="/app_dev.php/dashboard/quick-start" >
+
+        <div class="title">Quick Start</div>
+        <div class="icon menu-icon-quickstart"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="popup" class="option">                            <a href="/app_dev.php/dashboard/popup-category" >
+
+        <div class="title">Pop Up Category Review</div>
+        <div class="icon menu-icon-popup"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="my-dashboard" class="option">                            <a href="/app_dev.php/dashboard/" >
+
+        <div class="title">My Dashboard</div>
+        <div class="icon menu-icon-my-dashboard"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="business-builder" class="option current active">                            <a href="/app_dev.php/dashboard/business_builder" >
+
+        <div class="title">Business Builder</div>
+        <div class="icon menu-icon-business-builder"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li icon="my-reports" class="option">                            <a href="/app_dev.php/my-reports/" >
+
+        <div class="title">My Reports</div>
+        <div class="icon menu-icon-my-reports"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+
+                                    <li class="dropdown option">                                <a href="/app_dev.php/admin/"  class="dropdown-toggle" data-toggle="dropdown">
+
+        <div class="title">Admin</div>
+        <div class="icon menu-icon-"></div>
+
+                    <span class="caret"></span>
+            </a>
+
+
+            <ul class="menu_level_1 dropdown-menu">
+
+
+
+                                    <li class="menu-item dropdown dropdown-submenu">                                <a href="/app_dev.php/admin/dashboard"  class="dropdown-toggle" data-toggle="dropdown">
+
+        <div class="title">Tables</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+            <ul class="menu_level_2 dropdown-menu">
+
+
+                                <li class="option first">                            <a href="/app_dev.php/admin/dbv/siq/channel/list" >
+
+        <div class="title">Channel</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/column/list" >
+
+        <div class="title">Column</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/company/list" >
+
+        <div class="title">Company</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/companyunit/list" >
+
+        <div class="title">Company unit</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/grouping/list" >
+
+        <div class="title">Grouping</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/groupingtype/list" >
+
+        <div class="title">Grouping type</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/question/list" >
+
+        <div class="title">Question</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/responseoption/list" >
+
+        <div class="title">Response option</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/surveydate/list" >
+
+        <div class="title">Survey date</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/dbv/siq/user/list" >
+
+        <div class="title">User</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option last">                            <a href="/app_dev.php/admin/dbv/siq/usergroup/list" >
+
+        <div class="title">User group</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+    </ul>
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/usagelog/" >
+
+        <div class="title">User Usage Log</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+
+                                    <li class="menu-item dropdown dropdown-submenu">                                <a href="#"  class="dropdown-toggle" data-toggle="dropdown">
+
+        <div class="title">Upload</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+            <ul class="menu_level_2 dropdown-menu">
+
+
+                                <li class="option first">                            <a href="/app_dev.php/admin/upload" >
+
+        <div class="title">Load SPSS file</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/list-column-diff" >
+
+        <div class="title">Column Differences</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/uploaded-files" >
+
+        <div class="title">File List &amp; Upload</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option">                            <a href="/app_dev.php/admin/validbox-update" >
+
+        <div class="title">ValidBox update</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+
+                                <li class="option last">                            <a href="/app_dev.php/admin/test" >
+
+        <div class="title">Test</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+    </ul>
+
+
+
+        </li>
+
+
+
+
+                                <li class="option last">                            <a href="/app_dev.php/admin/export" >
+
+        <div class="title">Export data</div>
+        <div class="icon menu-icon-"></div>
+
+            </a>
+
+
+
+
+
+        </li>
+
+
+
+    </ul>
+
+
+
+        </li>
+
+
+
+    </ul>
+
+
+
+                </div>
+            </div>
+                                </div>
+
+        <div id="navbar-right">
+
+                                <div class="item-user-dropdown">
+                        <div class="item-user-welcome">
+                        Welcome, Janos Apati
+                        </div>
+                        <div class="dropdown">
+                            <ul class="nav navbar-nav">
+                                <li class="option change-password"><a href="/app_dev.php/profile/change-password">My Account</a></li>
+                                                                <li class="option logout"><a href="/app_dev.php/logout">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="item-my-reports item"><a style="padding:0;" href="/app_dev.php/my-reports/">My Reports</a></div>
+                <div class="item-methodology item"><a style="padding:0;" href="/app_dev.php/download-file?filename=Shopper+Intelligence+Methodology.pptx">Methodology</a></div>
+
+                                        <div class="item-contact item"><a style="padding:0;" href="/app_dev.php/contact">Contact</a></div>
+                <div class="item-tour item disabled"><a id="start-tour" style="padding:0;" href="#">Tour</a></div>
+
+
+        </div>
+    </div>
+</nav>
+            <div class="container wrapper">
+
+
+        <div class="businessBuilder">
+
+    <h1>How to...</h1>
+
+    <table class="faq-menu">
+        <tr>
+                            <td  class="faq-menu-active"  style="width: 20%;">
+                    <a href="?tab=1">Win with this retailer</a>
+                </td>
+                                    <td class="spacer"></td>                            <td  style="width: 20%;">
+                    <a href="?tab=2">Retain my most valuable shoppers</a>
+                </td>
+                                    <td class="spacer"></td>                            <td  style="width: 20%;">
+                    <a href="?tab=3">Grow the category</a>
+                </td>
+                                    <td class="spacer"></td>                            <td  style="width: 20%;">
+                    <a href="?tab=4">Improve brand shopper marketing effectiveness</a>
+                </td>
+                                    <td class="spacer"></td>                            <td  style="width: 20%;">
+                    <a href="?tab=5">Optimise point of purchase efficiency</a>
+                </td>
+                                    </tr>
+    </table>
+
+    <ul class="faq tab-1">
+                    <li>
+                <h2><a href="#">What does my category deliver to this retailer?</a></h2>
+                <ul style="display:none">
+                                            <li>
+                            <a class="collapsable" href="#">What is its role: to bring in Traffic or to drive Spend?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="categoryDna" />
+            <input type="hidden" name="box" value="box_012_categoryRole" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/box_012_categoryRole.jpg" alt="Category Role" />
+            </a>
+        </form>
+
+                                                                                                    <p>Higher scores from shoppers on one or more of the &quot;Traffic&quot; measures indicate an ability to impact the trip before the store, whereas higher scores on &quot;Spend&quot; measures show impact once in the store.</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Is it high or low engagement in this retailer?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="categoryDna" />
+            <input type="hidden" name="box" value="box_016_shoppingModeFixtureEffect" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/box_016_shoppingModeFixtureEffect.jpg" alt="Shopping Mode - Intended/Fixture Effectiveness" />
+            </a>
+        </form>
+
+                                                                                                    <p>Shoppers tell us whether they intended this to be a high speed or more considered purchase (Grab and Go/Browse). And then if something changed this in store (either positively or negatively in their view).</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Where does it sit in the Intentionality/Engagement Matrix?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="categoryDna" />
+            <input type="hidden" name="box" value="box_024_intentionality" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/box_024_intentionality.jpg" alt="Intentionality/Differentiation Matrix" />
+            </a>
+        </form>
+
+                                                                                                    <p>The 4 box matrix summarises the overall DNA of the category; identifying its position in the mix of the store for this retailer; high ratings on Intentionality and Engagement make this a more attractive category to invest in for the retailer. Each quadrant implies a different strategy.</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Does this vary for different shopper types? Or for our brand versus others?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                    <p>Does the category role vary by age group, by income, by gender of shoppers?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">How does our brand compare on the role implied by its shoppers?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareBrands" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_039_compareBrands" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/39_1.1.5_CompBrand_Cat Role.jpg" alt="Compare Brands (can it pre-select role?)" />
+            </a>
+        </form>
+
+                                                                                                    <p>Do our brand shoppers show a different role profile? If so, our brand may be able to move the dial for the retailer.</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">How does this differ to other banners/channels?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/box_030_compareRetailers.jpg" alt="Compare retailers" />
+            </a>
+        </form>
+
+                                                                                                    <p>Is there anything unique about this retailer in the way the category operates?</p>
+                            </div>
+                        </li>
+                                    </ul>
+            </li>
+                    <li>
+                <h2><a href="#">What’s different about this retailer&#039;s shoppers?</a></h2>
+                <ul style="display:none">
+                                            <li>
+                            <a class="collapsable" href="#">Who shops at this retailer? (demographics, needs, behaviours)</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="shopperProfile" />
+            <input type="hidden" name="box" value="box_021_age" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/21_1.2.1_Shopprofile_Age.jpg" alt="Shopper Profile page boxes" />
+            </a>
+        </form>
+
+                                                                                                    <p>Are there certain shopper types that are more likely to shop at this retailer across its entire business, or within our &quot;Department&quot;? We need to think about orienting our marketing to suit their target market.</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">What Missions are this retailer&#039;s shoppers more likely to be on?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="shopperProfile" />
+            <input type="hidden" name="box" value="box_032_shopperMission" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/box_032_shopperMission.jpg" alt="Mission - Compare retailers" />
+            </a>
+        </form>
+
+                                                                                                    <p>Does this retailer show a prevalence of bigger or smaller shopping trips? How should our category play to that?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">What do this retailer’s shoppers want?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareCategories" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_029_crossStore" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/29_1.2.3_CompCats_Imp.jpg" alt="Compare Retailers (Importance selected)" />
+            </a>
+        </form>
+
+                                                                                                    <p>Do this retailer&#039;s shoppers want particular things? More than other banners? Particularly in our Department/category?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Is our category behaving differently at this retailer?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.2.4_CompRet_Purchtrig.jpg" alt="Compare retailers (Purchase Triggers)" />
+            </a>
+        </form>
+
+                                                                                                    <p>What is the pattern of choices in this retailer compared to others, in our category?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Are certain shopper needs more prevalent for our category at this retailer?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.2.5_CompRet_Whenused.jpg" alt="Compare retailers (Consumer Dyn)" />
+            </a>
+        </form>
+
+                                                                                                    <p>Are there occasions (users, times) that are more common for this retailer than others; in the Department or in our category?</p>
+                            </div>
+                        </li>
+                                    </ul>
+            </li>
+                    <li>
+                <h2><a href="#">Where is this retailer winning/losing?</a></h2>
+                <ul style="display:none">
+                                            <li>
+                            <a class="collapsable" href="#">Where does this retailer do better or worse than its key competitors?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="drillDown" />
+            <input type="hidden" name="path" value="kpi" />
+            <input type="hidden" name="box" value="box_002_performance" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.3.1_CompRet_Perf.jpg" alt="Performance Measures" />
+            </a>
+        </form>
+
+                                                                                                    <p>Looking at the store and this Department, how does it benchmark in shopper satisfaction on all measures to competitor banners? What are its strengths and weakenesses.</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Where does this retailer do better or worse than its key competitors in &#039;net recommend&#039; ratings?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.3.2_CompRet_Osat.jpg" alt="Compare Retailers (Osat)" />
+            </a>
+        </form>
+
+                                                                                                    <p>Looking at the store and this Department: How does it benchmark in Overall (net) recommend rating to competitor banners? What are its strengths and weaknesses?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Is this particularly true of certain shoppers?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                    <p>Are certain types of shoppers more satisfied? Or do they want particular improvements?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">What improvements are shoppers at this retailer looking for?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.3.4_CompRet_DesImprov.jpg" alt="Compare Retailers (Desired Improv)" />
+            </a>
+        </form>
+
+                                                                                                    <p>Looking at the store and this Department: Are shoppers in this retailer looking for particular improvements? Is this different to the norm?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">How is their private label performing?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.3.5_CompRet_Ownlabel.jpg" alt="Compare Retailers (Q51)" />
+            </a>
+        </form>
+
+                                                                                                    <p>How does Private Label perform in this retailer; compared to competitors overall; in this Department?</p>
+                            </div>
+                        </li>
+                                            <li>
+                            <a class="collapsable" href="#">Do they have a strong Private Label image?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareRetailers" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_030_compareRetailers" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/30_1.3.6_CompRet_Ownlabel.jpg" alt="Compare Retailers (Own Label Q23_9)" />
+            </a>
+        </form>
+
+                                                                                                    <p>How willing are shoppers to risk choosing Private Label in this retailer? How does this compare?</p>
+                            </div>
+                        </li>
+                                    </ul>
+            </li>
+                    <li>
+                <h2><a href="#">How do I refocus my portfolio for success?</a></h2>
+                <ul style="display:none">
+                                            <li>
+                            <a class="collapsable" href="#">Which segments/brands are the opportunity for growth in this retailer? So how do I win support for them?</a>
+                            <div class="answer" style="display:none">
+                                                                                                                                                                <form method="post" action="/app_dev.php/dashboard/">
+            <input type="hidden" name="format" value="compareBrands" />
+            <input type="hidden" name="path" value="" />
+            <input type="hidden" name="box" value="box_039_compareBrands" />
+            <a href="#" onclick="$(this).closest('form').submit(); return false; " >
+                                <img class="figure" src="/images/businessBuilder/39_1.4.1_CompBrand_Perf.jpg" alt="Compare Brands" />
+            </a>
+        </form>
+
+                                                                                                    <p>Do some brands in the category work harder for the store, i.e. are the rated higher on intentionality or engagement? If so, can this be leveraged?”</p>
+                            </div>
+                        </li>
+                                    </ul>
+            </li>
+            </ul>
+</div>
+
+    <script type="text/javascript">
+        $('ul.faq h2').click(function (event) {
+            event.preventDefault();
+            $(this).toggleClass("faq-open");
+            $(this).next().slideToggle("fast");
+        });
+
+        $('ul.faq ul a.collapsable').click(function (event) {
+            event.preventDefault();
+            $(this).parent().toggleClass("faq-open");
+            $(this).next().slideToggle("fast");
+        });
+    </script>
+      </div>
+      <div class="clearfloat"></div>
+
+      <div id="footer">
+          <span>2016 Shopper Intelligence © SMI All rights reserved</span> |
+          <a href="/app_dev.php/terms-of-use">Terms of Use</a> |
+          <a href="/app_dev.php/privacy-policy">Privacy Policy</a>
+      </div>
+
+      <!-- Google Analytics -->
+      <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                    ga('create', 'UA-68766748-2', 'auto', {
+              'userId': '3',
+              'language': 'en'
+          });
+                    ga('send', 'pageview');
+
+      </script>
+
+<div id="sfwdt156d1d" class="sf-toolbar" style="display: none"></div><script>/*<![CDATA[*/        Sfjs = (function() {        "use strict";        var classListIsSupported = 'classList' in document.documentElement;        if (classListIsSupported) {            var hasClass = function (el, cssClass) { return el.classList.contains(cssClass); };            var removeClass = function(el, cssClass) { el.classList.remove(cssClass); };            var addClass = function(el, cssClass) { el.classList.add(cssClass); };            var toggleClass = function(el, cssClass) { el.classList.toggle(cssClass); };        } else {            var hasClass = function (el, cssClass) { return el.className.match(new RegExp('\\b' + cssClass + '\\b')); };            var removeClass = function(el, cssClass) { el.className = el.className.replace(new RegExp('\\b' + cssClass + '\\b'), ' '); };            var addClass = function(el, cssClass) { if (!hasClass(el, cssClass)) { el.className += " " + cssClass; } };            var toggleClass = function(el, cssClass) { hasClass(el, cssClass) ? removeClass(el, cssClass) : addClass(el, cssClass); };        }        var noop = function() {},            collectionToArray = function (collection) {                var length = collection.length || 0,                    results = new Array(length);                while (length--) {                    results[length] = collection[length];                }                return results;            },            profilerStorageKey = 'sf2/profiler/',            request = function(url, onSuccess, onError, payload, options) {                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');                options = options || {};                options.maxTries = options.maxTries || 0;                xhr.open(options.method || 'GET', url, true);                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');                xhr.onreadystatechange = function(state) {                    if (4 !== xhr.readyState) {                        return null;                    }                    if (xhr.status == 404 && options.maxTries > 1) {                        setTimeout(function(){                            options.maxTries--;                            request(url, onSuccess, onError, payload, options);                        }, 500);                        return null;                    }                    if (200 === xhr.status) {                        (onSuccess || noop)(xhr);                    } else {                        (onError || noop)(xhr);                    }                };                xhr.send(payload || '');            },            getPreference = function(name) {                if (!window.localStorage) {                    return null;                }                return localStorage.getItem(profilerStorageKey + name);            },            setPreference = function(name, value) {                if (!window.localStorage) {                    return null;                }                localStorage.setItem(profilerStorageKey + name, value);            },            requestStack = [],            renderAjaxRequests = function() {                var requestCounter = document.querySelectorAll('.sf-toolbar-ajax-requests');                if (!requestCounter.length) {                    return;                }                var ajaxToolbarPanel = document.querySelector('.sf-toolbar-block-ajax');                var tbodies = document.querySelectorAll('.sf-toolbar-ajax-request-list');                var state = 'ok';                if (tbodies.length) {                    var tbody = tbodies[0];                    var rows = document.createDocumentFragment();                    if (requestStack.length) {                        for (var i = 0; i < requestStack.length; i++) {                            var request = requestStack[i];                            var row = document.createElement('tr');                            rows.insertBefore(row, rows.firstChild);                            var methodCell = document.createElement('td');                            if (request.error) {                                methodCell.className = 'sf-ajax-request-error';                            }                            methodCell.textContent = request.method;                            row.appendChild(methodCell);                            var pathCell = document.createElement('td');                            pathCell.className = 'sf-ajax-request-url';                            if ('GET' === request.method) {                                var pathLink = document.createElement('a');                                pathLink.setAttribute('href', request.url);                                pathLink.textContent = request.url;                                pathCell.appendChild(pathLink);                            } else {                                pathCell.textContent = request.url;                            }                            pathCell.setAttribute('title', request.url);                            row.appendChild(pathCell);                            var durationCell = document.createElement('td');                            durationCell.className = 'sf-ajax-request-duration';                            if (request.duration) {                                durationCell.textContent = request.duration + "ms";                            } else {                                durationCell.textContent = '-';                            }                            row.appendChild(durationCell);                            row.appendChild(document.createTextNode(' '));                            var profilerCell = document.createElement('td');                            if (request.profilerUrl) {                                var profilerLink = document.createElement('a');                                profilerLink.setAttribute('href', request.profilerUrl);                                profilerLink.textContent = request.profile;                                profilerCell.appendChild(profilerLink);                            } else {                                profilerCell.textContent = 'n/a';                            }                            row.appendChild(profilerCell);                            var requestState = 'ok';                            if (request.error) {                                requestState = 'error';                                if (state != "loading" && i > requestStack.length - 4) {                                    state = 'error';                                }                            } else if (request.loading) {                                requestState = 'loading';                                state = 'loading';                            }                            row.className = 'sf-ajax-request sf-ajax-request-' + requestState;                        }                        var infoSpan = document.querySelectorAll(".sf-toolbar-ajax-info")[0];                        var children = collectionToArray(tbody.children);                        for (var i = 0; i < children.length; i++) {                            tbody.removeChild(children[i]);                        }                        tbody.appendChild(rows);                        if (infoSpan) {                            var text = requestStack.length + ' AJAX request' + (requestStack.length > 1 ? 's' : '');                            infoSpan.textContent = text;                        }                        ajaxToolbarPanel.style.display = 'block';                    } else {                        ajaxToolbarPanel.style.display = 'none';                    }                }                requestCounter[0].textContent = requestStack.length;                var className = 'sf-toolbar-ajax-requests sf-toolbar-value';                requestCounter[0].className = className;                if (state == 'ok') {                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-toolbar-status-red');                } else if (state == 'error') {                    Sfjs.addClass(ajaxToolbarPanel, 'sf-toolbar-status-red');                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                } else {                    Sfjs.addClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                }            };        var addEventListener;        var el = document.createElement('div');        if (!'addEventListener' in el) {            addEventListener = function (element, eventName, callback) {                element.attachEvent('on' + eventName, callback);            };        } else {            addEventListener = function (element, eventName, callback) {                element.addEventListener(eventName, callback, false);            };        }                    if (window.XMLHttpRequest && XMLHttpRequest.prototype.addEventListener) {                var proxied = XMLHttpRequest.prototype.open;                XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {                    var self = this;                    /* prevent logging AJAX calls to static and inline files, like templates */                    var path = url;                    if (url.substr(0, 1) === '/') {                        if (0 === url.indexOf('')) {                            path = url.substr(0);                        }                    }                    else if (0 === url.indexOf('http\x3A\x2F\x2Fdv.local\x3A8083')) {                        path = url.substr(20);                    }                    if (!path.match(new RegExp("^\/(app(_[\\w]+)?\\.php\/)?_wdt"))) {                        var stackElement = {                            loading: true,                            error: false,                            url: url,                            method: method,                            start: new Date()                        };                        requestStack.push(stackElement);                        this.addEventListener('readystatechange', function() {                            if (self.readyState == 4) {                                stackElement.duration = new Date() - stackElement.start;                                stackElement.loading = false;                                stackElement.error = self.status < 200 || self.status >= 400;                                stackElement.profile = self.getResponseHeader("X-Debug-Token");                                stackElement.profilerUrl = self.getResponseHeader("X-Debug-Token-Link");                                Sfjs.renderAjaxRequests();                            }                        }, false);                        Sfjs.renderAjaxRequests();                    }                    proxied.apply(this, Array.prototype.slice.call(arguments));                };            }                return {            hasClass: hasClass,            removeClass: removeClass,            addClass: addClass,            toggleClass: toggleClass,            getPreference: getPreference,            setPreference: setPreference,            addEventListener: addEventListener,            request: request,            renderAjaxRequests: renderAjaxRequests,            load: function(selector, url, onSuccess, onError, options) {                var el = document.getElementById(selector);                if (el && el.getAttribute('data-sfurl') !== url) {                    request(                        url,                        function(xhr) {                            el.innerHTML = xhr.responseText;                            el.setAttribute('data-sfurl', url);                            removeClass(el, 'loading');                            (onSuccess || noop)(xhr, el);                        },                        function(xhr) { (onError || noop)(xhr, el); },                        '',                        options                    );                }                return this;            },            toggle: function(selector, elOn, elOff) {                var tmp = elOn.style.display,                    el = document.getElementById(selector);                elOn.style.display = elOff.style.display;                elOff.style.display = tmp;                if (el) {                    el.style.display = 'none' === tmp ? 'none' : 'block';                }                return this;            },            createTabs: function() {                var tabGroups = document.querySelectorAll('.sf-tabs');                /* create the tab navigation for each group of tabs */                for (var i = 0; i < tabGroups.length; i++) {                    var tabs = tabGroups[i].querySelectorAll('.tab');                    var tabNavigation = document.createElement('ul');                    tabNavigation.className = 'tab-navigation';                    for (var j = 0; j < tabs.length; j++) {                        var tabId = 'tab-' + i + '-' + j;                        var tabTitle = tabs[j].querySelector('.tab-title').innerHTML;                        var tabNavigationItem = document.createElement('li');                        tabNavigationItem.setAttribute('data-tab-id', tabId);                        if (j == 0) { Sfjs.addClass(tabNavigationItem, 'active'); }                        if (Sfjs.hasClass(tabs[j], 'disabled')) { Sfjs.addClass(tabNavigationItem, 'disabled'); }                        tabNavigationItem.innerHTML = tabTitle;                        tabNavigation.appendChild(tabNavigationItem);                        var tabContent = tabs[j].querySelector('.tab-content');                        tabContent.parentElement.setAttribute('id', tabId);                    }                    tabGroups[i].insertBefore(tabNavigation, tabGroups[i].firstChild);                }                /* display the active tab and add the 'click' event listeners */                for (i = 0; i < tabGroups.length; i++) {                    tabNavigation = tabGroups[i].querySelectorAll('.tab-navigation li');                    for (j = 0; j < tabNavigation.length; j++) {                        tabId = tabNavigation[j].getAttribute('data-tab-id');                        document.getElementById(tabId).querySelector('.tab-title').className = 'hidden';                        if (Sfjs.hasClass(tabNavigation[j], 'active')) {                            document.getElementById(tabId).className = 'block';                        } else {                            document.getElementById(tabId).className = 'hidden';                        }                        tabNavigation[j].addEventListener('click', function(e) {                            var activeTab = e.target || e.srcElement;                            /* needed because when the tab contains HTML contents, user can click */                            /* on any of those elements instead of their parent '<li>' element */                            while (activeTab.tagName.toLowerCase() !== 'li') {                                activeTab = activeTab.parentNode;                            }                            /* get the full list of tabs through the parent of the active tab element */                            var tabNavigation = activeTab.parentNode.children;                            for (var k = 0; k < tabNavigation.length; k++) {                                var tabId = tabNavigation[k].getAttribute('data-tab-id');                                document.getElementById(tabId).className = 'hidden';                                Sfjs.removeClass(tabNavigation[k], 'active');                            }                            Sfjs.addClass(activeTab, 'active');                            var activeTabId = activeTab.getAttribute('data-tab-id');                            document.getElementById(activeTabId).className = 'block';                        });                    }                }            },            createToggles: function() {                var toggles = document.querySelectorAll('.sf-toggle');                for (var i = 0; i < toggles.length; i++) {                    var elementSelector = toggles[i].getAttribute('data-toggle-selector');                    var element = document.querySelector(elementSelector);                    Sfjs.addClass(element, 'sf-toggle-content');                    if (toggles[i].hasAttribute('data-toggle-initial') && toggles[i].getAttribute('data-toggle-initial') == 'display') {                        Sfjs.addClass(element, 'sf-toggle-visible');                    } else {                        Sfjs.addClass(element, 'sf-toggle-hidden');                    }                    Sfjs.addEventListener(toggles[i], 'click', function(e) {                        e.preventDefault();                        var toggle = e.target || e.srcElement;                        /* needed because when the toggle contains HTML contents, user can click */                        /* on any of those elements instead of their parent '.sf-toggle' element */                        while (!Sfjs.hasClass(toggle, 'sf-toggle')) {                            toggle = toggle.parentNode;                        }                        var element = document.querySelector(toggle.getAttribute('data-toggle-selector'));                        Sfjs.toggleClass(element, 'sf-toggle-hidden');                        Sfjs.toggleClass(element, 'sf-toggle-visible');                        /* the toggle doesn't change its contents when clicking on it */                        if (!toggle.hasAttribute('data-toggle-alt-content')) {                            return;                        }                        if (!toggle.hasAttribute('data-toggle-original-content')) {                            toggle.setAttribute('data-toggle-original-content', toggle.innerHTML);                        }                        var currentContent = toggle.innerHTML;                        var originalContent = toggle.getAttribute('data-toggle-original-content');                        var altContent = toggle.getAttribute('data-toggle-alt-content');                        toggle.innerHTML = currentContent !== altContent ? altContent : originalContent;                    });                }            }        };    })();    Sfjs.addEventListener(window, 'load', function() {        Sfjs.createTabs();        Sfjs.createToggles();    });/*]]>*/</script><script>/*<![CDATA[*/    (function () {                Sfjs.load(            'sfwdt156d1d',            '/app_dev.php/_wdt/156d1d',            function(xhr, el) {                el.style.display = -1 !== xhr.responseText.indexOf('sf-toolbarreset') ? 'block' : 'none';                if (el.style.display == 'none') {                    return;                }                if (Sfjs.getPreference('toolbar/displayState') == 'none') {                    document.getElementById('sfToolbarMainContent-156d1d').style.display = 'none';                    document.getElementById('sfToolbarClearer-156d1d').style.display = 'none';                    document.getElementById('sfMiniToolbar-156d1d').style.display = 'block';                } else {                    document.getElementById('sfToolbarMainContent-156d1d').style.display = 'block';                    document.getElementById('sfToolbarClearer-156d1d').style.display = 'block';                    document.getElementById('sfMiniToolbar-156d1d').style.display = 'none';                }                Sfjs.renderAjaxRequests();                /* Handle toolbar-info position */                var toolbarBlocks = document.querySelectorAll('.sf-toolbar-block');                for (var i = 0; i < toolbarBlocks.length; i += 1) {                    toolbarBlocks[i].onmouseover = function () {                        var toolbarInfo = this.querySelectorAll('.sf-toolbar-info')[0];                        var pageWidth = document.body.clientWidth;                        var elementWidth = toolbarInfo.offsetWidth;                        var leftValue = (elementWidth + this.offsetLeft) - pageWidth;                        var rightValue = (elementWidth + (pageWidth - this.offsetLeft)) - pageWidth;                        /* Reset right and left value, useful on window resize */                        toolbarInfo.style.right = '';                        toolbarInfo.style.left = '';                        if (elementWidth > pageWidth) {                            toolbarInfo.style.left = 0;                        }                        else if (leftValue > 0 && rightValue > 0) {                            toolbarInfo.style.right = (rightValue * -1) + 'px';                        } else if (leftValue < 0) {                            toolbarInfo.style.left = 0;                        } else {                            toolbarInfo.style.right = '0px';                        }                    };                }            },            function(xhr) {                if (xhr.status !== 0) {                    confirm('An error occurred while loading the web debug toolbar (' + xhr.status + ': ' + xhr.statusText + ').\n\nDo you want to open the profiler?') && (window.location = '/app_dev.php/_profiler/156d1d');                }            },            {'maxTries': 5}        );    })();/*]]>*/</script>
+</body>
+</html>

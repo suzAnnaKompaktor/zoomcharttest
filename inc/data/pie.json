@@ -1,0 +1,16 @@
+{
+    "values":[
+        {"value":25, "name":"WhatsApp", "style":{"label":null, "fillColor":"#27ab19","icon":"icons/pie-whatsapp.png"}},
+        {"value":23, "name":"Facebook", "style":{"label":null, "fillColor":"#3c599b","icon":"icons/pie-facebook.png"}},
+        {"value":15, "name":"Email", "style":{"label":null, "fillColor":"#f8de00","icon":"icons/pie-email.png"}, "subvalues":[
+            {"value":25, "name":"Work"},
+            {"value":15, "name":"Shopping"},
+            {"value":5, "name":"Other"}
+        ]},
+        {"value":13, "name":"Twitter", "style":{"label":null, "fillColor":"#32ccfe","icon":"icons/pie-twitter.png"}},
+        {"value":10, "name":"Google+", "style":{"label":null, "fillColor":"#de4b39","icon":"icons/pie-googleplus.png"}},
+        {"value":8, "name":"Instagram", "style":{"label":null, "fillColor":"#975e4a","icon":"icons/pie-instagram.png"}},
+        {"value":5, "name":"LinkedIn", "style":{"label":null, "fillColor":"#0274b3","icon":"icons/pie-linkedin-retina.png"}},
+        {"value":5, "name":"Skype", "style":{"label":null, "fillColor":"#3e9dd7","icon":"icons/pie-skype.png"}}
+    ]
+}

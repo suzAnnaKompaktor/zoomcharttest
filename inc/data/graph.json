@@ -1,0 +1,18 @@
+{
+    "nodes":[
+        {"id":"t-0", "title":"Topics", "loaded":true},
+        {"id":"t-1", "title":"Win with this retailer", "loaded":true},
+        {"id":"t-2", "title":"Retain my most valuable shoppers", "loaded":true},
+        {"id":"t-3", "title":"Grow the category", "loaded":true},
+        {"id":"t-4", "title":"Improve brand shopper marketing effectiveness", "loaded":true},
+        {"id":"t-5", "title":"Optimise point of purchase efficiency", "loaded":true}
+   ],
+
+    "links":[
+        {"id":"01", "from":"t-0", "to":"t-1"},
+        {"id":"02", "from":"t-0", "to":"t-2"},
+        {"id":"03", "from":"t-0", "to":"t-3"},
+        {"id":"04", "from":"t-0", "to":"t-4"},
+        {"id":"05", "from":"t-0", "to":"t-5"}
+    ]
+}
