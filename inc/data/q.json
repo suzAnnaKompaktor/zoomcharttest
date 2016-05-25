@@ -1,0 +1,1011 @@
+{
+    "nodes": [
+        {
+            "id": "0",
+            "label": "How to..."
+        },
+        {
+            "id": "1",
+            "label": "Win with this retailer"
+        },
+        {
+            "id": "1.1",
+            "label": "What does my category deliver to this retailer?",
+            "children": [
+                {
+                    "label": "What is its role: to bring in Traffic or to drive Spend?",
+                    "number": "1.1.1",
+                    "answer": "Higher scores from shoppers on one or more of the \"Traffic\" measures indicate an ability to impact the trip before the store, whereas higher scores on \"Spend\" measures show impact once in the store.",
+                    "boxes": [
+                        "box_012_categoryRole"
+                    ],
+                    "images": [
+                        "box_012_categoryRole.jpg"
+                    ],
+                    "box_name": "Category Role"
+                },
+                {
+                    "label": "Is it high or low engagement in this retailer?",
+                    "number": "1.1.2",
+                    "answer": "Shoppers tell us whether they intended this to be a high speed or more considered purchase (Grab and Go\/Browse). And then if something changed this in store (either positively or negatively in their view).",
+                    "boxes": [
+                        "box_016_shoppingModeFixtureEffect"
+                    ],
+                    "images": [
+                        "box_016_shoppingModeFixtureEffect.jpg"
+                    ],
+                    "box_name": "Shopping Mode - Intended\/Fixture Effectiveness"
+                },
+                {
+                    "label": "Where does it sit in the Intentionality\/Engagement Matrix?",
+                    "number": "1.1.3",
+                    "answer": "The 4 box matrix summarises the overall DNA of the category; identifying its position in the mix of the store for this retailer; high ratings on Intentionality and Engagement make this a more attractive category to invest in for the retailer. Each quadrant implies a different strategy.",
+                    "boxes": [
+                        "box_024_intentionality"
+                    ],
+                    "images": [
+                        "box_024_intentionality.jpg"
+                    ],
+                    "box_name": "Intentionality\/Differentiation Matrix"
+                },
+                {
+                    "label": "Does this vary for different shopper types? Or for our brand versus others?",
+                    "number": "1.1.4",
+                    "answer": "Does the category role vary by age group, by income, by gender of shoppers?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "1.1.4 Compare by Shopper Type (Role).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (Role)"
+                },
+                {
+                    "label": "How does our brand compare on the role implied by its shoppers?",
+                    "number": "1.1.5",
+                    "answer": "Do our brand shoppers show a different role profile? If so, our brand may be able to move the dial for the retailer.",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "1.1.5 Compare Brands (Role).png"
+                    ],
+                    "box_name": "Compare Brands (can it pre-select role?)"
+                },
+                {
+                    "label": "How does this differ to other banners\/channels?",
+                    "number": "1.1.6",
+                    "answer": "Is there anything unique about this retailer in the way the category operates?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "box_030_compareRetailers.jpg"
+                    ],
+                    "box_name": "Compare retailers"
+                }
+            ]
+        },
+        {
+            "id": "1.2",
+            "label": "What\u2019s different about this retailer's shoppers?",
+            "children": [
+                {
+                    "label": "Who shops at this retailer? (demographics, needs, behaviours)",
+                    "number": "1.2.1",
+                    "answer": "Are there certain shopper types that are more likely to shop at this retailer across its entire business, or within our \"Department\"? We need to think about orienting our marketing to suit their target market.",
+                    "boxes": [
+                        "box_021_age"
+                    ],
+                    "images": [
+                        "21_1.2.1_Shopprofile_Age.jpg"
+                    ],
+                    "box_name": "Shopper Profile page boxes"
+                },
+                {
+                    "label": "What Missions are this retailer's shoppers more likely to be on?",
+                    "number": "1.2.2",
+                    "answer": "Does this retailer show a prevalence of bigger or smaller shopping trips? How should our category play to that?",
+                    "boxes": [
+                        "box_032_shopperMission"
+                    ],
+                    "images": [
+                        "box_032_shopperMission.jpg"
+                    ],
+                    "box_name": "Mission - Compare retailers"
+                },
+                {
+                    "label": "What do this retailer\u2019s shoppers want?",
+                    "number": "1.2.3",
+                    "answer": "Do this retailer's shoppers want particular things? More than other banners? Particularly in our Department\/category?",
+                    "boxes": [
+                        "box_029_crossStore"
+                    ],
+                    "images": [
+                        "29_1.2.3_CompCats_Imp.jpg"
+                    ],
+                    "box_name": "Compare Retailers (Importance selected)"
+                },
+                {
+                    "label": "Is our category behaving differently at this retailer?",
+                    "number": "1.2.4",
+                    "answer": "What is the pattern of choices in this retailer compared to others, in our category?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.2.4_CompRet_Purchtrig.jpg"
+                    ],
+                    "box_name": "Compare retailers (Purchase Triggers)"
+                },
+                {
+                    "label": "Are certain shopper needs more prevalent for our category at this retailer?",
+                    "number": "1.2.5",
+                    "answer": "Are there occasions (users, times) that are more common for this retailer than others; in the Department or in our category?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.2.5_CompRet_Whenused.jpg"
+                    ],
+                    "box_name": "Compare retailers (Consumer Dyn)"
+                }
+            ]
+        },
+        {
+            "id": "1.3",
+            "label": "Where is this retailer winning\/losing?",
+            "children": [
+                {
+                    "label": "Where does this retailer do better or worse than its key competitors?",
+                    "number": "1.3.1",
+                    "answer": "Looking at the store and this Department, how does it benchmark in shopper satisfaction on all measures to competitor banners? What are its strengths and weakenesses.",
+                    "boxes": [
+                        "box_002_performance"
+                    ],
+                    "images": [
+                        "30_1.3.1_CompRet_Perf.jpg"
+                    ],
+                    "box_name": "Performance Measures"
+                },
+                {
+                    "label": "Where does this retailer do better or worse than its key competitors in 'net recommend' ratings?",
+                    "number": "1.3.2",
+                    "answer": "Looking at the store and this Department: How does it benchmark in Overall (net) recommend rating to competitor banners? What are its strengths and weaknesses?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.3.2_CompRet_Osat.jpg"
+                    ],
+                    "box_name": "Compare Retailers (Osat)"
+                },
+                {
+                    "label": "Is this particularly true of certain shoppers?",
+                    "number": "1.3.3",
+                    "answer": "Are certain types of shoppers more satisfied? Or do they want particular improvements?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "1.3.3 Compare by Shopper Type (Osat).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (Osat)"
+                },
+                {
+                    "label": "What improvements are shoppers at this retailer looking for?",
+                    "number": "1.3.4",
+                    "answer": "Looking at the store and this Department: Are shoppers in this retailer looking for particular improvements? Is this different to the norm?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.3.4_CompRet_DesImprov.jpg"
+                    ],
+                    "box_name": "Compare Retailers (Desired Improv)"
+                },
+                {
+                    "label": "How is their private label performing?",
+                    "number": "1.3.5",
+                    "answer": "How does Private Label perform in this retailer; compared to competitors overall; in this Department?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.3.5_CompRet_Ownlabel.jpg"
+                    ],
+                    "box_name": "Compare Retailers (Q51)"
+                },
+                {
+                    "label": "Do they have a strong Private Label image?",
+                    "number": "1.3.6",
+                    "answer": "How willing are shoppers to risk choosing Private Label in this retailer? How does this compare?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "30_1.3.6_CompRet_Ownlabel.jpg"
+                    ],
+                    "box_name": "Compare Retailers (Own Label Q23_9)"
+                }
+            ]
+        },
+        {
+            "id": "1.4",
+            "label": "How do I refocus my portfolio for success?",
+            "children": [
+                {
+                    "label": "Which segments\/brands are the opportunity for growth in this retailer? So how do I win support for them?",
+                    "number": "1.4.1",
+                    "answer": "Do some brands in the category work harder for the store, i.e. are the rated higher on intentionality or engagement? If so, can this be leveraged?\u201d",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "1.4.1 Compare Brands (Matrix).png"
+                    ],
+                    "box_name": "Compare Brands"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "label": "Retain my most valuable shoppers"
+        },
+        {
+            "id": "2.1",
+            "label": "Who are my MVS?",
+            "children": [
+                {
+                    "label": "Which shopper types are more profitable because they buy more regularly, are more loyal, and less promotionally oriented?",
+                    "number": "2.1.1",
+                    "answer": "Which shopper types are more profitable because they buy more regularly, are more loyal, and less promotionally oriented? How do we focus on them to improve ROI?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "2.1.1 Compare by Shopper Type (MVS).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (MVS)"
+                },
+                {
+                    "label": "How does this vary for my brand?",
+                    "number": "2.1.2",
+                    "answer": "Do the shoppers of my brand have a different loyalty  profile to the category norm?",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "2.1.2 Compare Brands (Dec Hier).png"
+                    ],
+                    "box_name": "Compare Product - Brand - Decision Hierarchy"
+                },
+                {
+                    "label": "How does this vary by segment?",
+                    "number": "2.1.3",
+                    "answer": "Do the shoppers of any one product segment have a different loyalty profile to the category norm?",
+                    "boxes": [
+                        "box_040_compareSegments"
+                    ],
+                    "images": [
+                        "2.1.3 Compare Segments.png"
+                    ],
+                    "box_name": "Compare Product - Brands (MVS)"
+                }
+            ]
+        },
+        {
+            "id": "2.2",
+            "label": "What do we need to change for them?",
+            "children": [
+                {
+                    "label": "What\u2019s important to them, how do they make their decisions and when?",
+                    "number": "2.2.1",
+                    "answer": "Look at MVS Shopper \"Importance ratings\" how do they differ to the less valuable?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "2.2.1 Compare by Shopper Type (MVS-Imp).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (MVS\/Imp)"
+                },
+                {
+                    "label": "What do my MVS particularly want improved?",
+                    "number": "2.2.2",
+                    "answer": "What does the MVS shopper want improved and how does this differ to others?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "2.2.2 Compare by Shopper Type (MVS-POP).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (MVS\/POP)"
+                },
+                {
+                    "label": "When do they  make their decisions and why (so when do we influence them)?",
+                    "number": "2.2.3",
+                    "answer": "Are the MVS more planned and what triggers are most critical for them compared to the norm?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "2.2.3 Compare by Shopper Type (MVS-Trig).png"
+                    ],
+                    "box_name": "Compare by Shopper Type (MVS\/Trig)"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "label": "Grow the category"
+        },
+        {
+            "id": "3.1",
+            "label": "How do I bring new shoppers in? (Penetration)",
+            "children": [
+                {
+                    "label": "How do we reduce the barriers to purchase?",
+                    "number": "3.1.1",
+                    "answer": "Is this category more about pre store barriers or in store barriers? If the decision is made before the store then that has to be our focus for growth",
+                    "boxes": [
+                        "box_007_purchaseTriggers"
+                    ],
+                    "images": [
+                        "box_007_purchaseTriggers.jpg"
+                    ],
+                    "box_name": "Purchase Triggers"
+                },
+                {
+                    "label": "What are the drivers of the category (occasions\/needs) and how can we leverage for new users?",
+                    "number": "3.1.2",
+                    "answer": "Who is it being bought for and when is it intended to be used (so where should we seek to influence potential shoppers?)",
+                    "boxes": [
+                        "box_018_whenUsed"
+                    ],
+                    "images": [
+                        "box_018_whenUsed.jpg"
+                    ],
+                    "box_name": "Consumer Dyn"
+                },
+                {
+                    "label": "What are the drivers of the category (users) and how can we leverage for growth?",
+                    "number": "3.1.3",
+                    "answer": "When is it intended to be used  so how can we exploit that?",
+                    "boxes": [
+                        "box_018_whenUsed"
+                    ],
+                    "images": [
+                        "box_018_whenUsed.jpg"
+                    ],
+                    "box_name": "Consumer Dyn"
+                }
+            ]
+        },
+        {
+            "id": "3.2",
+            "label": "How do I get existing shoppers to increase transaction size? (AWOP)",
+            "children": [
+                {
+                    "label": "Who are my current shoppers?",
+                    "number": "3.2.1",
+                    "answer": "Are there certain demographic groups that are more important to my business? Can we bring in more of these or do we need to \"grow our base\"?",
+                    "boxes": [
+                        "box_021_age"
+                    ],
+                    "images": [
+                        "21_3.2.1_Shopprofile_Age.jpg"
+                    ],
+                    "box_name": "Shopper Profile page boxes"
+                },
+                {
+                    "label": "How satisfied are they today?",
+                    "number": "3.2.2",
+                    "answer": "Are there certain demographic groups that are more satisfied or less satisfied in the category? How do we win over more of the \"doubters\"?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "3.2.2 Compare by Shopper Type (NPS).png"
+                    ],
+                    "box_name": "Compare Shopper Types (Osat)"
+                },
+                {
+                    "label": "What motivates them and what are their \u201cpoints of pain\u201d?",
+                    "number": "3.2.3",
+                    "answer": "What do shoppers tell us are their priorities in this category? Getting these right is likely to drive growth.",
+                    "boxes": [
+                        "box_003_importance"
+                    ],
+                    "images": [
+                        "box_003_importance.jpg"
+                    ],
+                    "box_name": "Import"
+                },
+                {
+                    "label": "What do they want improved?",
+                    "number": "3.2.4",
+                    "answer": "Are there certain improvements our shoppers seek more than the norm? How can we deliver that?",
+                    "boxes": [
+                        "box_006_pointOfPurchase"
+                    ],
+                    "images": [
+                        "box_006_pointOfPurchase.jpg"
+                    ],
+                    "box_name": "POP"
+                },
+                {
+                    "label": "How are they responding to current promotions?",
+                    "number": "3.2.5",
+                    "answer": "Are they demonstrating a willingness to spend more or do our promotions \"cupboard load\"\/reward existing behaviours?",
+                    "boxes": [
+                        "box_009_promoResponse"
+                    ],
+                    "images": [
+                        "box_009_promoResponse.jpg"
+                    ],
+                    "box_name": "Promo Response"
+                },
+                {
+                    "label": "How well are we keeping them in our \"conversion funnel\"?",
+                    "number": "3.2.6",
+                    "answer": "Do those shoppers planning to buy a specific brand go on to buy that brand? If not, why not? Are we losing sales?",
+                    "boxes": [
+                        "box_011_conversionSummary"
+                    ],
+                    "images": [
+                        "box_011_conversionSummary.jpg"
+                    ],
+                    "box_name": "Conversion Summary"
+                },
+                {
+                    "label": "Where do I focus for premiumisation? (brand\/segment)",
+                    "number": "3.2.7",
+                    "answer": "For which brands do shoppers show a stronger desire for premium offerings? Focussing on these could drive value growth.",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "3.2.7 Compare Brands (Role).png"
+                    ],
+                    "box_name": "Category Role"
+                }
+            ]
+        },
+        {
+            "id": "3.3",
+            "label": "How do I get existing shoppers to buy more often? (Frequency)",
+            "children": [
+                {
+                    "label": "How can I best remind shoppers\/trigger the need in the path to purchase?",
+                    "number": "3.3.1",
+                    "answer": "Is this category more decided pre or in store? Is it about buying for a change or part of a routine? How do we increase the right trigger points?",
+                    "boxes": [
+                        "box_007_purchaseTriggers"
+                    ],
+                    "images": [
+                        "box_007_purchaseTriggers.jpg"
+                    ],
+                    "box_name": "Purchase Triggers"
+                },
+                {
+                    "label": "How well are promotions driving incremental sales today?",
+                    "number": "3.3.2",
+                    "answer": "Does the current promotional response show evidence of driving an extra unplanned purchase? If not, why not?",
+                    "boxes": [
+                        "box_009_promoResponse"
+                    ],
+                    "images": [
+                        "box_009_promoResponse.jpg"
+                    ],
+                    "box_name": "Promo Response"
+                },
+                {
+                    "label": "What do other categories do well?",
+                    "number": "3.3.3",
+                    "answer": "Top 10 on conversion planned to buy - who does this well and why? How do we emulate that?",
+                    "boxes": [
+                        "box_038_top"
+                    ],
+                    "images": [
+                        "38_3.3.3_Top10_Conv.jpg"
+                    ],
+                    "box_name": "Conversion Summary"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "label": "Improve brand shopper marketing effectiveness"
+        },
+        {
+            "id": "4.1",
+            "label": "What\u2019s driving the purchase?",
+            "children": [
+                {
+                    "label": "Who are my shoppers?",
+                    "number": "4.1.1",
+                    "answer": "What are my key segments? What do they need from the category?",
+                    "boxes": [
+                        "box_021_age"
+                    ],
+                    "images": [
+                        "21_4.1.1_Shopprofile_Age.jpg"
+                    ],
+                    "box_name": "Shopper Profile page boxes"
+                },
+                {
+                    "label": "What triggers the purchase decision and when?",
+                    "number": "4.1.2",
+                    "answer": "Is this a routine or an occasion driven purchase?",
+                    "boxes": [
+                        "box_007_purchaseTriggers"
+                    ],
+                    "images": [
+                        "box_007_purchaseTriggers.jpg"
+                    ],
+                    "box_name": "Purchase Triggers"
+                },
+                {
+                    "label": "What users and occasions do they have in mind?",
+                    "number": "4.1.3",
+                    "answer": "How do we target the need behind the purchase?",
+                    "boxes": [
+                        "box_018_whenUsed"
+                    ],
+                    "images": [
+                        "box_018_whenUsed.jpg"
+                    ],
+                    "box_name": "Consumer Dyn"
+                },
+                {
+                    "label": "How does this differ by brand so how do I best respond?",
+                    "number": "4.1.4",
+                    "answer": "What triggers purchase for my brand shoppers?",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "4.1.4 Compare Brands (Purch Trig).png"
+                    ],
+                    "box_name": "Compare Product - Brands (Purch Trig)"
+                },
+                {
+                    "label": "How does this differ by Product segment so how do I best respond?",
+                    "number": "4.1.5",
+                    "answer": "What triggers purchase for key Segments shoppers?",
+                    "boxes": [
+                        "box_040_compareSegments"
+                    ],
+                    "images": [
+                        "4.1.5 Compare Segments (Purch Trig).png"
+                    ],
+                    "box_name": "Compare Product - Segment (Purch Trig)"
+                },
+                {
+                    "label": "How does the trip mission vary to the norm?",
+                    "number": "4.1.6",
+                    "answer": "Are we stronger for top up or main shop trips and how should this impact our strategy?",
+                    "boxes": [
+                        "box_032_shopperMission"
+                    ],
+                    "images": [
+                        "box_032_shopperMission.jpg"
+                    ],
+                    "box_name": "Trip Mission"
+                }
+            ]
+        },
+        {
+            "id": "4.2",
+            "label": "How do shoppers make decisions so where & how do I best influence them?",
+            "children": [
+                {
+                    "label": "What are their priorities?",
+                    "number": "4.2.1",
+                    "answer": "What are my shoppers looking for?",
+                    "boxes": [
+                        "box_003_importance"
+                    ],
+                    "images": [
+                        "box_003_importance.jpg"
+                    ],
+                    "box_name": "Importance Measures"
+                },
+                {
+                    "label": "How brand oriented are they?",
+                    "number": "4.2.2",
+                    "answer": "Are they more loyal or less loyal to the brand and\/or the category?",
+                    "boxes": [
+                        "box_008_decisionHierarchy"
+                    ],
+                    "images": [
+                        "box_008_decisionHierarchy.jpg"
+                    ],
+                    "box_name": "Decision Hierarchy"
+                },
+                {
+                    "label": "Do we keep the planned purchase?",
+                    "number": "4.2.3",
+                    "answer": "Where do we \"lose\" most potential shoppers in the path to purchase?",
+                    "boxes": [
+                        "box_011_conversionSummary"
+                    ],
+                    "images": [
+                        "box_011_conversionSummary.jpg"
+                    ],
+                    "box_name": "Conversion Summary"
+                },
+                {
+                    "label": "How do promotions impact them?",
+                    "number": "4.2.4",
+                    "answer": "What is shopper response to promotions - does it drive an extra sale or substitute for another purchase?",
+                    "boxes": [
+                        "box_009_promoResponse"
+                    ],
+                    "images": [
+                        "09_4.2.4_Promo.jpg"
+                    ],
+                    "box_name": "Promo"
+                },
+                {
+                    "label": "How do promotions responses differ by brand?",
+                    "number": "4.2.5",
+                    "answer": "Do different brands achieve a different promotional outcome for the category?",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "4.2.5 Compare Brands (Promo Resp).png"
+                    ],
+                    "box_name": "Compare Product - Brand (Promo Response)"
+                }
+            ]
+        },
+        {
+            "id": "4.3",
+            "label": "Which shopper segments are most attractive?",
+            "children": [
+                {
+                    "label": "What\u2019s different about satisfied shoppers compared to less satisfied?",
+                    "number": "4.3.1",
+                    "answer": "Compare the shoppers giving high sat ratings to low sat ratings, what are the differences?",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "4.3.1 Compare by Shopper Type (Osat).png"
+                    ],
+                    "box_name": "Overall Satisfaction"
+                },
+                {
+                    "label": "What missions are we strong for?",
+                    "number": "4.3.2",
+                    "answer": "If we have a bias to main shopping trips our category may be more \"core\" to the higher spending shoppers",
+                    "boxes": [
+                        "box_032_shopperMission"
+                    ],
+                    "images": [
+                        "box_032_shopperMission.jpg"
+                    ],
+                    "box_name": "Shopper Mission"
+                },
+                {
+                    "label": "How does satisfaction differ for my brand?",
+                    "number": "4.3.3",
+                    "answer": "Are there brand shoppers that are more satisfied? What does that brand do to achieve that?",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "4.3.3 Compare Brands (osat).png"
+                    ],
+                    "box_name": "Compare Product - Brand (Osat)"
+                },
+                {
+                    "label": "How does mission differ for different Brands?",
+                    "number": "4.3.4",
+                    "answer": "Do brands show a different trip mission profile? Does that help us differentiate our shopper marketing activity?",
+                    "boxes": [
+                        "box_039_compareBrands"
+                    ],
+                    "images": [
+                        "4.3.4 Compare Brands (mission).png"
+                    ],
+                    "box_name": "Compare Product - Brand (Miss)"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "label": "Optimise point of purchase efficiency"
+        },
+        {
+            "id": "5.1",
+            "label": "Are we satisfying shoppers? What\u2019s working, what\u2019s not?",
+            "children": [
+                {
+                    "label": "How does our category compare to the norm?",
+                    "number": "5.1.1",
+                    "answer": "A lower satisfaction score indicates (relatively) an opportunity to improve.",
+                    "boxes": [
+                        "box_045_compareShoppers"
+                    ],
+                    "images": [
+                        "5.1.1 Drill Down (OSAT).png"
+                    ],
+                    "box_name": "Overall Satisfaction"
+                },
+                {
+                    "label": "What are we doing better or worse?",
+                    "number": "5.1.2",
+                    "answer": "Which measures appear to be behind the satisfaction score (if any)?",
+                    "boxes": [
+                        "box_002_performance"
+                    ],
+                    "images": [
+                        "box_002_performance.jpg"
+                    ],
+                    "box_name": "Performance Measures"
+                },
+                {
+                    "label": "Are we delivering what matters most to our shoppers?",
+                    "number": "5.1.3",
+                    "answer": "For which importance measures is this category below par?",
+                    "boxes": [
+                        "box_004_performanceMatrix"
+                    ],
+                    "images": [
+                        "box_004_performanceMatrix.jpg"
+                    ],
+                    "box_name": "Performance Matrix"
+                },
+                {
+                    "label": "How does this compare to other retailers?",
+                    "number": "5.1.4",
+                    "answer": "Is this retailer performing worse than its competitors?",
+                    "boxes": [
+                        "box_030_compareRetailers"
+                    ],
+                    "images": [
+                        "box_030_compareRetailers.jpg"
+                    ],
+                    "box_name": "Compare Q24 across retailers"
+                },
+                {
+                    "label": "How does this compare to other categories?",
+                    "number": "5.1.5",
+                    "answer": "Is our category peforming worse than other categories overall in this retailer?",
+                    "boxes": [
+                        "box_029_crossStore"
+                    ],
+                    "images": [
+                        "box_029_crossStore.jpg"
+                    ],
+                    "box_name": "Compare Q24 across categories"
+                },
+                {
+                    "label": "Which categories are doing this better and what can we learn?",
+                    "number": "5.1.6",
+                    "answer": "Which categories lead the way on delivering each performance measure?",
+                    "boxes": [
+                        "box_038_top"
+                    ],
+                    "images": [
+                        "38_5.1.6_Top10s_Perf.jpg"
+                    ],
+                    "box_name": "Top10s"
+                }
+            ]
+        },
+        {
+            "id": "5.2",
+            "label": "How should I adjust range and space in the category?",
+            "children": [
+                {
+                    "label": "What is the shoppers own priority for improvement?",
+                    "number": "5.2.1",
+                    "answer": "What would they prioritise for change? How is this different to the norm?",
+                    "boxes": [
+                        "box_006_pointOfPurchase"
+                    ],
+                    "images": [
+                        "box_006_pointOfPurchase.jpg"
+                    ],
+                    "box_name": "POP improvements"
+                },
+                {
+                    "label": "What\u2019s particularly important to them?",
+                    "number": "5.2.2",
+                    "answer": "Are choice and new ideas more important or is availability a higher priority? How does this vary compared to the norm?",
+                    "boxes": [
+                        "box_003_importance"
+                    ],
+                    "images": [
+                        "box_003_importance.jpg"
+                    ],
+                    "box_name": "Importance"
+                },
+                {
+                    "label": "Are there segments of shoppers with particular requirements?",
+                    "number": "5.2.3",
+                    "answer": "Can we see one part of the category with different shopper needs?",
+                    "boxes": [
+                        "box_040_compareSegments"
+                    ],
+                    "images": [
+                        "5.2.3 Compare Segments (Importance).png"
+                    ],
+                    "box_name": "Compare product - Segment (Imp)"
+                }
+            ]
+        },
+        {
+            "id": "5.3",
+            "label": "What Trip missions are present?",
+            "children": [
+                {
+                    "label": "How does the trip mission vary to the norm?",
+                    "number": "5.3.1",
+                    "answer": "Are we stronger for top up or main shop trips and how should this impact our strategy?",
+                    "boxes": [
+                        "box_032_shopperMission"
+                    ],
+                    "images": [
+                        "box_032_shopperMission.jpg"
+                    ],
+                    "box_name": "Trip Mission"
+                }
+            ]
+        },
+        {
+            "id": "5.4",
+            "label": "How do I optimise the department\/aisle?",
+            "children": [
+                {
+                    "label": "How do the categories in the Aisle differ on what shoppers seek and how they buy?",
+                    "number": "5.4.1",
+                    "answer": "Compare our category to others in the Department",
+                    "boxes": [
+                        "box_029_crossStore"
+                    ],
+                    "images": [
+                        "29_5.4.1_CompCats_DesImprov.jpg"
+                    ],
+                    "box_name": "Compare Categories Point of Purchase"
+                },
+                {
+                    "label": "Which are more intentional, which drive spend?",
+                    "number": "5.4.2",
+                    "answer": "Look at where each category in the Department sits on the matrix of intentionality and differentiation. What differences does that imply for strategy?",
+                    "boxes": [
+                        "box_040_compareSegments"
+                    ],
+                    "images": [
+                        "5.4.2 Compare Segments (Matrix).png"
+                    ],
+                    "box_name": "Intentionality Matrix"
+                },
+                {
+                    "label": "How do they differ in shopper range, space and merchandising requirements?",
+                    "number": "5.4.3",
+                    "answer": "Compare importance ratings by departmental categories.",
+                    "boxes": [
+                        "box_029_crossStore"
+                    ],
+                    "images": [
+                        "29_5.4.3_CompCats_imp"
+                    ],
+                    "box_name": "Compare Categories Importance"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "id": 1,
+            "from": "0",
+            "to": "1"
+        },
+        {
+            "id": 11,
+            "from": "1",
+            "to": "1.1"
+        },
+        {
+            "id": 12,
+            "from": "1",
+            "to": "1.2"
+        },
+        {
+            "id": 13,
+            "from": "1",
+            "to": "1.3"
+        },
+        {
+            "id": 14,
+            "from": "1",
+            "to": "1.4"
+        },
+        {
+            "id": 2,
+            "from": "0",
+            "to": "2"
+        },
+        {
+            "id": 21,
+            "from": "2",
+            "to": "2.1"
+        },
+        {
+            "id": 22,
+            "from": "2",
+            "to": "2.2"
+        },
+        {
+            "id": 3,
+            "from": "0",
+            "to": "3"
+        },
+        {
+            "id": 31,
+            "from": "3",
+            "to": "3.1"
+        },
+        {
+            "id": 32,
+            "from": "3",
+            "to": "3.2"
+        },
+        {
+            "id": 33,
+            "from": "3",
+            "to": "3.3"
+        },
+        {
+            "id": 4,
+            "from": "0",
+            "to": "4"
+        },
+        {
+            "id": 41,
+            "from": "4",
+            "to": "4.1"
+        },
+        {
+            "id": 42,
+            "from": "4",
+            "to": "4.2"
+        },
+        {
+            "id": 43,
+            "from": "4",
+            "to": "4.3"
+        },
+        {
+            "id": 5,
+            "from": "0",
+            "to": "5"
+        },
+        {
+            "id": 51,
+            "from": "5",
+            "to": "5.1"
+        },
+        {
+            "id": 52,
+            "from": "5",
+            "to": "5.2"
+        },
+        {
+            "id": 53,
+            "from": "5",
+            "to": "5.3"
+        },
+        {
+            "id": 54,
+            "from": "5",
+            "to": "5.4"
+        }
+    ]
+}

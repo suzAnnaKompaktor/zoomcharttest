@@ -11,65 +11,53 @@ var ZoomChartsLicenseKey = "577dc0aa9e80ab25c83df560952407bfb23369d8c5566347c7"+
 window.onload = function() {
     var assetBasePath = "inc/";
 	var assetDataPath = assetBasePath + "data/";
+    var assetDataURL = assetDataPath + "q.json";
 	var assetImgPath = assetBasePath + "img/";
-    var tabPrefix = "t-";
-	var netChartDefaultValue = tabPrefix + '0';
+	var netChartDefaultValue =  '0';
     var topicBackgrounds = {
-        "t-1": "#E2659F",
-        "t-2": "#E2B465",
-        "t-3": "#7ADD6E",
-        "t-4": "#66E1CB",
-        "t-5": "#A675E1"
+        "1": "#E2659F",
+        "2": "#E2B465",
+        "3": "#7ADD6E",
+        "4": "#66E1CB",
+        "5": "#A675E1"
     };
-
-    function _(output) {
-        console.log(output);
-    }
+    var popup = new ChartPopup("customContextMenu", {
+        dataUrl: assetDataURL
+    });
 
     var activeNode = {};
 
-    var menuElement = document.getElementById("custom_context_menu");
-
-    // the context menu element has to be the direct descendant of the document.body
-    document.body.appendChild(menuElement);
-
-    function chartClick(event, args) {
-        console.log(event);
-        console.log(args);
-        menuElement.style.display = "block";
-        menuElement.style.left = event.pageX + "px";
-        menuElement.style.top = event.pageY + "px";
-        menuElement.style.zIndex = 1300;
-        menuElement.style.backgroundColor = topicBackgrounds[event.clickNode.id];
-        if (args.clickNode) {
+    function chartClick(event) {
+        popup.hide();
+        if (event.clickNode) {
+            var node = event.clickNode;
+            node.pageX = event.pageX;
+            node.pageY = event.pageY;
+            popup.setNode(node);
+            popup.render();
            // menuElement.innerHTML = "Node menu";
         }
         else {
-          hidePopup();
+          popup.hide();
         }
 
         // disable the default context menu
         event.preventDefault();
     }
 
-    function hidePopup() {
-        menuElement.style.display = "none";
+     function chartDoubleClick(event) {
+        popup.hide();
     }
 
-    function nodeRadius(node) {
-        activeNode = node.focused == true ? node : activeNode;
-        if (node == activeNode) {
-            node.radius = 30;
-        } else { //default size
-            node.radius = Math.max(node.relevance * 10, 20);
-        }
-        node.radius;
-    }
+    /*function showPopup(node) {
+        menuElement.style.backgroundColor = topicBackgrounds[node.clickNode.id.split('.').shift()];
+    }*/
+
     function nodeStyle(node) {
-        console.log(node.labelStyle.backgroundStyle.fillColor);
+        //console.log(node.labelStyle.backgroundStyle.fillColor);
         //node.fillColor = null;
         //node.image = assetImgPath + "faces/" + node.id + ".png";
-        var label = node.data.title;
+        var label = node.data.label;
         node.items = [];
        /* if (node == activeNode) {*/
             /*node.label = "";
@@ -80,8 +68,8 @@ window.onload = function() {
             });*/
         /*} else {*/
             node.label = label;
-            if (node.id !== "t-0") {
-                node.labelStyle.backgroundStyle.fillColor = topicBackgrounds[node.id];
+            if (node.id !== "0") {
+                node.labelStyle.backgroundStyle.fillColor = topicBackgrounds[node.id.split('.').shift()];
             }
        /* }*/
     }
@@ -93,17 +81,15 @@ window.onload = function() {
     }
 
     function selectionEvent(event){
-        if (!document.getElementById("selection").checked) return;
+        //if (!document.getElementById("selection").checked) return;
         var selection = event.selection;
-        var contents = [];
+       /*var contents = [];
         for (var i = 0; i < selection.length; i ++){
             var item = selection[i];
             var type = (item.isNode) ? "node": "link";
             contents.push(type + " " + item.id);
-        }
+        }*/
     }
-
-
 
     /*function nodeMenu(data, node) {
       return "<h2>foo" + data.id + "</h2>";
@@ -112,7 +98,7 @@ window.onload = function() {
     var netChart = new NetChart({
         container: document.getElementById('chartDiv'),
         data: {
-            url: assetDataPath + "graph.json"
+            url: assetDataURL
         },
         layout: {
             aspectRatio: true,
@@ -122,8 +108,8 @@ window.onload = function() {
             mode: "focusnodes",
             initialNodes: [netChartDefaultValue],
             focusNodeExpansionRadius: 2,
-            numberOfFocusNodes: 2,
-            focusNodeTailExpansionRadius: 0.5
+            numberOfFocusNodes: 1,
+            focusNodeTailExpansionRadius: 0.2
         },
         /*advanced: {
             pointer: {noClickOnDoubleClick: false}
@@ -134,6 +120,9 @@ window.onload = function() {
                     chartClick(event);
                     changeTargetNode(event.clickNode);
                 }
+            },
+            onDoubleClick: function (event) {
+                chartDoubleClick(event);
             },
             onSelectionChange: selectionEvent
         },
@@ -151,12 +140,7 @@ window.onload = function() {
                 initialAutoZoom: 'false'
             }
         },
-        nodeMenu: {
-            enabled: false/*,
-            showData: false,
-            buttons: "",
-            contentsFunction: nodeMenu*/
-        },
+        nodeMenu: {enabled: false},
         linkMenu: {enabled: false},
         style: {
             fadeTime: 200,
@@ -165,13 +149,13 @@ window.onload = function() {
             },
             nodeRadiusExtent: [20, 30],
             nodeAutoScaling: "none",
-            nodeHovered: {fillColor: "white", shadowColor: "#419a00", shadowOffsetY: 2},
-            linkHovered: {fillColor: "#419a00", shadowColor: "#419a00"},
+            nodeHovered: {fillColor: "white", shadowColor: "#B3B3B3", shadowOffsetY: 2},
+            linkHovered: {fillColor: "#B3B3B3", shadowColor: "#B3B3B3"},
             nodeLabel: {
                 padding: 1,
                 borderRadius: 2,
                 textStyle: {font: "10px Roboto", fillColor: "white"},
-                backgroundStyle: {fillColor: "black"}
+                backgroundStyle: {fillColor: "#B3B3B3"}
             },
             linkLabel: {
                 padding: 1,
@@ -180,14 +164,13 @@ window.onload = function() {
                 backgroundStyle: {fillColor: "rgba(0,0,0,0.7)", lineColor: "transparent"}
             },
             nodeStyleFunction: function(node) {
-                nodeRadius(node);
+                //nodeRadius(node);
                 nodeStyle(node);
             },
             linkStyleFunction: function(link) {
-                link.fillColor = "#09c";
+                link.fillColor = "#B3B3B3";
                 if (link.hovered) {
                     link.radius = 2;
-                    link.label = link.data.type;
                 } else {
                     link.radius = 1;
                 }
@@ -203,13 +186,9 @@ window.onload = function() {
         }
     });
 
-   function changeTargetNode(node) {
+    function changeTargetNode(node) {
         var nodeId = node.id;
-        if (nodeId != endNodeId) {
-            endNodeId = nodeId;
-
-            chart.updateStyle();
-        }
+        netChart.updateStyle();
     }
 
     var updateHeight = function() {
@@ -220,4 +199,115 @@ window.onload = function() {
     };
     window.addEventListener('orientationchange', updateHeight);
     updateHeight();
+
+
+};
+
+var ChartPopup = function (popupId, options) {
+    this.init(popupId, options);
+};
+
+ChartPopup.prototype = {
+    popup: null,
+    content: '',
+    dataUrl: null,
+    node: null,
+    $accordion: $( '<div id="accordion"></div>' ),
+    siqDashboardPath: '#',
+
+    init: function (popupId, options) {
+        this.popup = document.getElementById(popupId);
+        // the context menu element has to be the direct descendant of the document.body
+        document.body.appendChild(this.popup);
+        this.dataUrl = options.dataUrl;
+        this.setNode(options.node);
+    },
+    render: function () {
+        var _self = this;
+        var request = $.ajax({
+          url: this.dataUrl,
+        });
+
+        request.done(function( data ) {
+          var el = data.nodes.filter(function (el) {
+            if (!el.hasOwnProperty('id')) {
+                return false;
+            }
+            if (el.id == _self.node.id && el.hasOwnProperty('children')) {
+                return el;
+            }
+
+          })[0];
+
+          var content = _self.themeAccordion(el);
+
+         if (content.length > 0) {
+            _self.$accordion.html(content);
+            $(_self.popup).html(_self.$accordion)
+            _self.$accordion.accordion({
+              heightStyle: "content"
+            });
+            _self.place();
+            _self.style();
+            _self.show();
+          }
+          else {
+            _self.hide();
+          }
+        });
+
+        request.fail(function( jqXHR, textStatus ) {
+          alert( "Request failed: " + textStatus );
+        });
+    },
+    show: function () {
+        this.popup.style.display = "block";
+    },
+    hide: function () {
+        this.popup.style.display = "none";
+    },
+    style: function () {
+        this.popup.className = 'popup' + this.node.id.split('.').shift();
+    },
+    place: function () {
+        this.popup.style.left = this.node.pageX + "px";
+        this.popup.style.top = this.node.pageY + "px";
+        this.popup.style.zIndex = 1300;
+    },
+    setNode: function (node) {
+        this.node = node;
+    },
+    themeAccordion: function (obj) {
+        var output = "";
+        if (typeof obj === 'object' && obj.hasOwnProperty('children')) {
+            var itemsLength = obj.children.length;
+            if (itemsLength > 0) {
+                for (var i = 0; i < itemsLength; i++) {
+                    var child = obj.children[i];
+                    output += "<h3>" + child.label + "</h3>";
+                    output += "<div>";
+                    if (child.hasOwnProperty('boxes')) {
+                        for (var n = child.boxes.length - 1; n >= 0; n--) {
+                            output += this.themeLinkToDashboard(child.box_name, child.boxes[n], child.box_name, child.images[n]);
+                        };
+                    }
+                    output += "<p>" + child.answer + "</p>";
+                    output += "</div>";
+                }
+            }
+        }
+        return output;
+    },
+    themeLinkToDashboard: function (boxName, boxPath, alt, imageName) {
+        var imagePath = 'https://clientportal.shopperintelligence.com/images/businessBuilder/' + imageName;
+        var output = '<form method="post" action="' + this.siqDashboardPath + '" target="_blank">';
+        output += '    <input type="hidden" name="format" value="' + boxPath.format + '" />';
+        output += '    <input type="hidden" name="path" value="' + boxPath.path + '" />';
+        output += '    <input type="hidden" name="box" value="' + boxName + '" />';
+        output += '    <a href="#" onclick="$(this).closest(\'form\').submit(); return false; " >';
+        output += '      <img class="figure" src="' + imagePath + '" alt="' + alt + '" />';
+        output += '     </a>';
+        output += '   </form>';
+        return output;
+    },
 };
