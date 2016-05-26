@@ -27,23 +27,6 @@ window.onload = function() {
 
     var activeNode = {};
 
-    function chartClick(event) {
-        popup.hide();
-        if (event.clickNode) {
-            var node = event.clickNode;
-            node.pageX = event.pageX;
-            node.pageY = event.pageY;
-            popup.setNode(node);
-            popup.render();
-           // menuElement.innerHTML = "Node menu";
-        }
-        else {
-          popup.hide();
-        }
-
-        // disable the default context menu
-        event.preventDefault();
-    }
 
      function chartDoubleClick(event) {
         popup.hide();
@@ -54,11 +37,17 @@ window.onload = function() {
     }*/
 
     function nodeStyle(node) {
-        //console.log(node.labelStyle.backgroundStyle.fillColor);
+        console.log(node);
         //node.fillColor = null;
         //node.image = assetImgPath + "faces/" + node.id + ".png";
         var label = node.data.label;
-        node.items = [];
+        if (node.id.split('.').length > 1) {
+            node.display = "text";
+            //node.bounds.y0 = 0;
+            node.fillColor = topicBackgrounds[node.id.split('.').shift()];
+        }
+        console.log(node.id.split('.').length);
+        //node.items = [];
        /* if (node == activeNode) {*/
             /*node.label = "";
             node.items.push({
@@ -72,12 +61,6 @@ window.onload = function() {
                 node.labelStyle.backgroundStyle.fillColor = topicBackgrounds[node.id.split('.').shift()];
             }
        /* }*/
-    }
-
-    function linkStyle(link) {
-        if (activeNode && ((link.from == activeNode || link.to === activeNode)) && activeNode.hovered == true) {
-            link.fillColor = "green";
-        }
     }
 
     function selectionEvent(event){
@@ -94,7 +77,6 @@ window.onload = function() {
     /*function nodeMenu(data, node) {
       return "<h2>foo" + data.id + "</h2>";
     }*/
-
     var netChart = new NetChart({
         container: document.getElementById('chartDiv'),
         data: {
@@ -111,13 +93,58 @@ window.onload = function() {
             numberOfFocusNodes: 1,
             focusNodeTailExpansionRadius: 0.2
         },
+        advanced: {
+            pointer: {noClickOnDoubleClick: false}
+        },
+        events: {
+            onClick: netChartClick
+        },
+        style: {
+            fadeTime: 200,
+            nodeRadiusExtent: [20, 30],
+            nodeStyleFunction: function(node) {
+                //nodeRadius(node);
+                nodeStyle(node);
+            }
+        },
+        interaction: {
+            selection: {
+                allowMoveNodesOffscreen: false,
+                lockNodesOnMove: false
+            },
+            resizing: {enabled: false},
+            zooming: {
+                zoomExtent: [0.2, 3],
+                autoZoomExtent: [0.8, 3],
+                autoZoomSize: 0.9,
+                wheel: false,
+                initialAutoZoom: 'false'
+            }
+        }
+    });
+    /*var netChart = new NetChart({
+        container: document.getElementById('chartDiv'),
+        data: {
+            url: assetDataURL
+        },
+        layout: {
+            aspectRatio: true,
+            nodeSpacing: 4
+        },
+        navigation: {
+            mode: "focusnodes",
+            initialNodes: [netChartDefaultValue],
+            focusNodeExpansionRadius: 2,
+            numberOfFocusNodes: 1,
+            focusNodeTailExpansionRadius: 0.2
+        },*/
         /*advanced: {
             pointer: {noClickOnDoubleClick: false}
         },*/
-        events: {
+        /*events: {
             onClick: function (event) {
                 if (event.clickNode) {
-                    chartClick(event);
+                    netChartClick(event);
                     changeTargetNode(event.clickNode);
                 }
             },
@@ -131,39 +158,39 @@ window.onload = function() {
                 allowMoveNodesOffscreen: false,
                 lockNodesOnMove: false
             },*/
-            resizing: {enabled: false},
+            /*resizing: {enabled: false},
             zooming: {
                 zoomExtent: [0.2, 3],
                 autoZoomExtent: [0.8, 3],
                 autoZoomSize: 0.9,
                 wheel: false,
                 initialAutoZoom: 'false'
-            }
-        },
+            }*/
+        /*},
         nodeMenu: {enabled: false},
         linkMenu: {enabled: false},
         style: {
             fadeTime: 200,
-            node: {
-                imageCropping: true
+            /*node: {
+                imageCropping: false
             },
             nodeRadiusExtent: [20, 30],
             nodeAutoScaling: "none",
             nodeHovered: {fillColor: "white", shadowColor: "#B3B3B3", shadowOffsetY: 2},
-            linkHovered: {fillColor: "#B3B3B3", shadowColor: "#B3B3B3"},
-            nodeLabel: {
+            linkHovered: {fillColor: "#B3B3B3", shadowColor: "#B3B3B3"},*/
+            /*nodeLabel: {
                 padding: 1,
                 borderRadius: 2,
                 textStyle: {font: "10px Roboto", fillColor: "white"},
                 backgroundStyle: {fillColor: "#B3B3B3"}
-            },
-            linkLabel: {
+            },*/
+            /*linkLabel: {
                 padding: 1,
                 borderRadius: 1,
                 textStyle: {font: "4px Roboto", fillColor: "white"},
                 backgroundStyle: {fillColor: "rgba(0,0,0,0.7)", lineColor: "transparent"}
-            },
-            nodeStyleFunction: function(node) {
+            },*/
+            /*nodeStyleFunction: function(node) {
                 //nodeRadius(node);
                 nodeStyle(node);
             },
@@ -174,7 +201,6 @@ window.onload = function() {
                 } else {
                     link.radius = 1;
                 }
-                linkStyle(link);
             },
             selection: {
                 sizeConstant: 0,
@@ -184,7 +210,30 @@ window.onload = function() {
         toolbar: {
             enabled: true
         }
-    });
+    });*/
+
+    function netChartClick(event, args) {
+
+        if (!event.ctrlKey && !event.shiftKey && args.clickNode) {
+            netChart.addFocusNode(args.clickNode);
+        }
+
+        popup.hide();
+        if (event.clickNode) {
+            var node = event.clickNode;
+            node.pageX = event.pageX;
+            node.pageY = event.pageY;
+            popup.setNode(node);
+            popup.render();
+           // menuElement.innerHTML = "Node menu";
+        }
+        else {
+          popup.hide();
+        }
+
+        // disable the default context menu
+        event.preventDefault();
+    }
 
     function changeTargetNode(node) {
         var nodeId = node.id;
