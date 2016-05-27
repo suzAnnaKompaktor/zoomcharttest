@@ -43,10 +43,10 @@ window.onload = function() {
         var label = node.data.label;
         if (node.id.split('.').length > 1) {
             node.display = "text";
-            //node.bounds.y0 = 0;
             node.fillColor = topicBackgrounds[node.id.split('.').shift()];
+            //console.log(node);
         }
-        console.log(node.id.split('.').length);
+
         //node.items = [];
        /* if (node == activeNode) {*/
             /*node.label = "";
@@ -60,7 +60,13 @@ window.onload = function() {
             if (node.id !== "0") {
                 node.labelStyle.backgroundStyle.fillColor = topicBackgrounds[node.id.split('.').shift()];
             }
+            node.labelStyle.textStyle.font = "12px Open Sans";
        /* }*/
+
+       if (node.hovered){
+            node.radius = 45;
+            //node.image = "/dvsl/data/net-chart/friend-net/"+node.id+".png";
+        }
     }
 
     function selectionEvent(event){
@@ -97,28 +103,48 @@ window.onload = function() {
             pointer: {noClickOnDoubleClick: false}
         },
         events: {
-            onClick: netChartClick
+            onClick: netChartClick,
+            onPositionChange: function(event){
+                if (event.selection.length > 0) {
+                    var node = event.selection[0];
+                    popup.place();
+                }
+            }
         },
+        nodeMenu: {enabled: false},
+        linkMenu: {enabled: false},
         style: {
             fadeTime: 200,
             nodeRadiusExtent: [20, 30],
+            node: {
+                cursor: "pointer"
+            },
             nodeStyleFunction: function(node) {
                 //nodeRadius(node);
                 nodeStyle(node);
+            },
+            nodeSelected: {
+                cursor: "move"
+            },
+            nodeFocused: {
+                fillColor: "#afafaf"
+            },
+            nodeLabel: {
+                borderRadius: 2,
+                padding: 4
             }
         },
         interaction: {
             selection: {
                 allowMoveNodesOffscreen: false,
-                lockNodesOnMove: false
+                lockNodesOnMove: true
             },
-            resizing: {enabled: false},
+            /*resizing: {enabled: false},*/
             zooming: {
-                zoomExtent: [0.2, 3],
+                /*zoomExtent: [0.2, 3],
                 autoZoomExtent: [0.8, 3],
                 autoZoomSize: 0.9,
-                wheel: false,
-                initialAutoZoom: 'false'
+                initialAutoZoom: 'false'*/
             }
         }
     });
@@ -213,14 +239,23 @@ window.onload = function() {
     });*/
 
     function netChartClick(event, args) {
-
         if (!event.ctrlKey && !event.shiftKey && args.clickNode) {
             netChart.addFocusNode(args.clickNode);
+           // console.log($('#chartDiv').width());
+           var w = -($('#chartDiv').width() / 2);
+           var h = -($('#chartDiv').height() / 2);
+           var x = Math.floor(Math.random() * w);
+           var y = Math.floor(Math.random() * h);
+           console.log(x);
+           console.log(y);
+            //args.clickNode.x = x;
+            //args.clickNode.y = y;
+            //netChart.lockNode(args.clickNode.id, x, y);
         }
 
         popup.hide();
-        if (event.clickNode) {
-            var node = event.clickNode;
+        if (args.clickNode) {
+            var node = args.clickNode;
             node.pageX = event.pageX;
             node.pageY = event.pageY;
             popup.setNode(node);
@@ -262,6 +297,7 @@ ChartPopup.prototype = {
     dataUrl: null,
     node: null,
     $accordion: $( '<div id="accordion"></div>' ),
+    $close: $( '<a class="close">×</a>' ),
     siqDashboardPath: '#',
 
     init: function (popupId, options) {
@@ -288,14 +324,10 @@ ChartPopup.prototype = {
 
           })[0];
 
-          var content = _self.themeAccordion(el);
+         var content = _self.themeAccordion(el);
 
          if (content.length > 0) {
-            _self.$accordion.html(content);
-            $(_self.popup).html(_self.$accordion)
-            _self.$accordion.accordion({
-              heightStyle: "content"
-            });
+            _self.setContent(content);
             _self.place();
             _self.style();
             _self.show();
@@ -318,13 +350,32 @@ ChartPopup.prototype = {
     style: function () {
         this.popup.className = 'popup' + this.node.id.split('.').shift();
     },
-    place: function () {
-        this.popup.style.left = this.node.pageX + "px";
-        this.popup.style.top = this.node.pageY + "px";
+    place: function (x, y) {
+        var x = x || this.node.shape.x + (this.node.shape.hHeight - 17);
+        var y = y || this.node.shape.y + (this.node.shape.hWidth - this.node.shape.hWidth / 2 - 2);
+        this.popup.style.left = x + "px";
+        this.popup.style.top = y + "px";
         this.popup.style.zIndex = 1300;
     },
     setNode: function (node) {
         this.node = node;
+    },
+    setContent: function (content) {
+        var _self = this;
+
+        this.$accordion.html(content);
+        $(this.popup)
+            .html(this.$accordion)
+            .prepend(this.$close);
+
+        this.$accordion.accordion({
+          heightStyle: "content"
+        });
+
+        this.$close.on('click', function(event) {
+            event.preventDefault();
+            _self.hide();
+        });
     },
     themeAccordion: function (obj) {
         var output = "";
