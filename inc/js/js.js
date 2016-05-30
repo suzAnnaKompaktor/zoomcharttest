@@ -130,7 +130,7 @@ window.onload = function() {
                 fillColor: "#afafaf"
             },
             nodeLabel: {
-                borderRadius: 2,
+                borderRadius: 5,
                 padding: 4
             }
         },
@@ -242,15 +242,21 @@ window.onload = function() {
         if (!event.ctrlKey && !event.shiftKey && args.clickNode) {
             netChart.addFocusNode(args.clickNode);
            // console.log($('#chartDiv').width());
-           var w = -($('#chartDiv').width() / 2);
-           var h = -($('#chartDiv').height() / 2);
-           var x = Math.floor(Math.random() * w);
-           var y = Math.floor(Math.random() * h);
-           console.log(x);
-           console.log(y);
-            //args.clickNode.x = x;
-            //args.clickNode.y = y;
+
+           // var w = -($('#chartDiv').width() / 2);
+           // var h = -($('#chartDiv').height() / 2);
+           // var x = Math.floor(Math.random() * w);
+           // var y = Math.floor(Math.random() * h);
+           // console.log(x);
+           // console.log(y);
+            //args.clickNode.shape.x = x;
+            //args.clickNode.shape.y = y;
+            //args.clickNode.shape.hWidth = 730;
+            //args.clickNode.shape.hHeight= 300;
+           // args.clickNode.coordinates = [x,y];
             //netChart.lockNode(args.clickNode.id, x, y);
+           // console.log(args.clickNode);
+            //netChart.updateStyle([args.clickNode.id]);
         }
 
         popup.hide();
