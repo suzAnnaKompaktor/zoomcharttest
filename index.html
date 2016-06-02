@@ -9,33 +9,102 @@
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://clientportal.shopperintelligence.com/css/general.css">
     <script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
     <script  src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
     <style type="text/css">
+    body {
+            padding-top: 0;
+    }
         #customContextMenu {
             max-width: 700px;
+            min-width: 250px;
+            position:absolute;
+            padding-bottom: 1px;
         }
-        #customContextMenu img.figure:hover {
-            /*position: absolute;
-            z-index: 1080;*/
-            -webkit-transform: scale(1.5);
-            -moz-transform: scale(1.5);
-            -ms-transform: scale(1.5);
-            -o-transform: scale(1.5);
-            transform: scale(1.5);
+        #customContextMenu .figure a img{
+               display: block;
+    max-width: 100%;
+    height: auto;
         }
 
-        #customContextMenu img.figure {
+        #customContextMenu .figure {
             float: right;
             width: 60%;
             margin-left: 20px;
-            -webkit-transition: all 0.5s ease;
-            -moz-transition: all 0.5s ease;
-            -ms-transition: all 0.5s ease;
-            -o-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-            z-index: 10;
+        }
+
+        #customContextMenu .figure.figure-fixed {
+            position: fixed;
+            right: 0;
+            left:0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1999;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #customContextMenu .figure a {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            padding: 4px;
+            line-height: 1.42857143;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            -webkit-box-shadow: 0 1px 2px #ededed,0 0 4px #ededed inset;
+            box-shadow: 0 1px 2px #ededed,0 0 4px #ededed inset;
+        }
+
+        #customContextMenu .figure.figure-fixed a {
+        }
+
+        #customContextMenu .figure a .zoom {
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                right: 0;
+                padding: 5px 8px;
+                color: #fff;
+                background-color: #474a4c;
+                border-radius: 0 0 0 5px;
+                -webkit-box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+                cursor: pointer;
+                -webkit-transition: -webkit-transform .1s linear .1s;
+                -moz-transition: -moz-transform .1s linear .1s;
+                -o-transition: -o-transform .1s linear .1s;
+                transition: transform .1s linear .1s;
+                -webkit-transform: translate(100%, 0);
+                -ms-transform: translate(100%, 0);
+                -o-transform: translate(100%, 0);
+                transform: translate(100%, 0);
+        }
+
+        #customContextMenu .figure a .zoom .fa:before {
+            content: "\f00e";
+        }
+
+        #customContextMenu .figure a:hover .zoom {
+            -ms-transform: translate(0, 0);
+            -o-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+        #customContextMenu .figure.figure-fixed a .zoom {
+            -ms-transform: translate(0, 0);
+            -o-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+         #customContextMenu .figure.figure-fixed a .zoom .fa:before {
+            content: "\f010";
         }
 
         #customContextMenu p {}
@@ -141,7 +210,7 @@
         .popup3 .ui-state-default,
         .popup3 .ui-widget-content .ui-state-default,
         .popup3 .ui-widget-header .ui-state-default {
-            background: #7ADD6E;
+            background: #E4F8E2;
         }
 
         .popup3 .ui-state-active, .popup3 .ui-widget-content .ui-state-active,
@@ -215,12 +284,16 @@
             background-image: none;
             background-color: #fff;
         }
+
+        .ui-accordion-content {
+            max-height: 220px;
+        }
     </style>
     <title>ZoomCharts javascript SDK demo: Social network</title>
 </head>
 <body>
-<div id="chartDiv" style="width: 100%; position:relative"></div>
-<div id="customContextMenu" style="display:none;position:absolute;">
+<div id="chartDiv" style="width: 100%; position:relative;"></div>
+<div id="customContextMenu" style="display:none;">
 </div>
 <script src="https://cdn.zoomcharts-cloud.com/1/latest/zoomcharts.js" type="text/javascript"></script>
 <script src="inc/js/js.js" type="text/javascript"></script>
