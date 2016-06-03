@@ -63,7 +63,8 @@ window.onload = function() {
             //console.log(node);
             node.radius = 40;
             node.fillColor = null;
-            node.image = assetImgPath + "icons/icon_" + node.id + ".svg";
+            node.image = assetImgPath + "icons/icon_" + node.id + ".png";
+            node.imageCropping = "crop";
             node.labelStyle.textStyle.font = "700 12px  Open Sans";
 
             if (node == activeNode) {
