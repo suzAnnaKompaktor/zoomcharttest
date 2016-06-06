@@ -66,6 +66,8 @@ window.onload = function() {
             node.image = assetImgPath + "icons/icon_" + node.id + ".png";
             node.imageCropping = "crop";
             node.labelStyle.textStyle.font = "700 12px  Open Sans";
+            node.lineColor = "#c3c5c7";
+            node.lineWidth = 2;
 
             if (node == activeNode) {
                 node.fillColor = "#f7f7f7";
